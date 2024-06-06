@@ -7,21 +7,19 @@ Original file is located at
     https://colab.research.google.com/drive/14PztWDQzJr7ViaJ3WQsZe7rTzJ1xCtjA
 """
 
-from google.colab import files
-uploaded = files.upload()
 
 import os
 import tarfile
-
-os.makedirs('20news-bydate', exist_ok=True)
-
-with tarfile.open('20news-bydate.tar.gz', 'r') as tar_ref:
-    tar_ref.extractall('20news-bydate')
-
+import matplotlib.pyplot as plt
 import pandas as pd
+import torch
+from NeuralNMF import train
+from sklearn.feature_extraction.text import TfidfVectorizer
+from NeuralNMF import Neural_NMF
 
-train_data_dir = '20news-bydate/20news-bydate-train'
-test_data_dir = '20news-bydate/20news-bydate-test'
+
+train_data_dir = "C:\Users\ASUS\Downloads\repo\20news-bydate\20news-bydate-train"
+test_data_dir = "C:\Users\ASUS\Downloads\repo\20news-bydate\20news-bydate-test"
 
 # Function to load data
 def load_20newsgroups(data_dir):
@@ -48,7 +46,7 @@ test_df = load_20newsgroups(test_data_dir)
 
 train_df.head()
 
-import matplotlib.pyplot as plt
+
 
 newsgroup_counts = train_df['newsgroup'].value_counts()
 
@@ -56,10 +54,7 @@ plt.figure(figsize=(8, 8))
 plt.pie(newsgroup_counts, labels=newsgroup_counts.index, autopct='%1.1f%%', startangle=90)
 _ = plt.title('Distribution of Newsgroup Categories')
 
-import torch
-pip3 install NeuralNMF
 
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, stop_words='english')
 tfidf = tfidf_vectorizer.fit_transform(train_df['text'])
@@ -67,15 +62,12 @@ tfidf = tfidf_vectorizer.fit_transform(train_df['text'])
 X = torch.tensor(tfidf.toarray(), dtype=torch.float64)
 X.shape
 
-from NeuralNMF import Neural_NMF
-
 # m = 100
 # k1 = 10
 # k2 = 5
 
 # net = Neural_NMF([m, k1, k2])
 
-from NeuralNMF import train
 
 # Train the model
 # history = train(net, X[:100], epoch=6, lr=500, supervised=False)

@@ -13,13 +13,14 @@ import tarfile
 import matplotlib.pyplot as plt
 import pandas as pd
 import torch
+from pathlib import Path
 from NeuralNMF import train
 from sklearn.feature_extraction.text import TfidfVectorizer
 from NeuralNMF import Neural_NMF
 
 
-train_data_dir = "C:\Users\ASUS\Downloads\repo\20news-bydate\20news-bydate-train"
-test_data_dir = "C:\Users\ASUS\Downloads\repo\20news-bydate\20news-bydate-test"
+train_data_dir = Path("/home/Tanishk/20news-bydate/20news-bydate-train")
+test_data_dir = Path("/home/Tanishk/20news-bydate/20news-bydate-test")
 
 # Function to load data
 def load_20newsgroups(data_dir):

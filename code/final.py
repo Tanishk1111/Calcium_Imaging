@@ -84,9 +84,9 @@ history = []
 
 # Function to train on batches
 def train_on_batches(net, batches, epochs, lr):
-    for batch in batches:
-        history1 = train(net, batch, epoch=epochs, lr=lr, supervised=False)
-        history.append(history1)
+    #for batch in batches:
+    history1 = train(net, batch, epoch=epochs, lr=lr, supervised=False)
+    history.append(history1)
 
 
 # Train the model on batches

@@ -17,6 +17,7 @@ from pathlib import Path
 from NeuralNMF import train
 from sklearn.feature_extraction.text import TfidfVectorizer
 from NeuralNMF import Neural_NMF
+import pickle
 
 
 train_data_dir = Path("/home/Tanishk/20news-bydate/20news-bydate-train")

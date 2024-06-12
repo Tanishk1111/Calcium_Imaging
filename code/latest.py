@@ -74,7 +74,7 @@ history = []
 
 # Function to train on batches
 
-history = train(net, X, epoch=1, lr=500, supervised=False)
+history = train(net, X, epoch=10, lr=500, supervised=False)
 
 
 with open("history.pkl", "wb") as file:

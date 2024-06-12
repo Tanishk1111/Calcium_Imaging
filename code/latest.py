@@ -75,8 +75,8 @@ batches = create_batches(X1, batch_size)
 history = []
 
 # Function to train on batches
-def train_on_batches(net, batches[:10], epochs, lr):
-    for batch in batches:
+def train_on_batches(net, batches, epochs, lr):
+    for batch in batches[:10]:
         history = train(net, batch, epoch=epochs, lr=lr, supervised=False)
         
 

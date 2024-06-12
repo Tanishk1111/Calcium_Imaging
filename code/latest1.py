@@ -55,7 +55,7 @@ X = torch.tensor(tfidf.toarray(), dtype=torch.float64)
 
 
 X1 = X[0:11300]
-m = X.shape[0]
+m = 100
 k2 = 1000
 k3 = 400
 k4 = 20

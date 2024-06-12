@@ -48,18 +48,17 @@ train_df = load_20newsgroups(train_data_dir)
 test_df = load_20newsgroups(test_data_dir)
 
 
-tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, stop_words='english')
+tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, stop_words='english', max_features=5000)
 tfidf = tfidf_vectorizer.fit_transform(train_df['text'])
 
 X = torch.tensor(tfidf.toarray(), dtype=torch.float64)
 
 m = X.shape[0]
-k1 = 5000
 k2 = 1000
 k3 = 400
 k4 = 20
 
-net = Neural_NMF([m, k1, k2, k3, k4])
+net = Neural_NMF([m, k2, k3, k4])
 
 
 #def create_batches(X1, batch_size):

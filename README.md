@@ -127,52 +127,5 @@ losses, k1s, k2s = evaluate_hyperparameters(mat_data, day=0, mouse=18)
 | Training Time   | 22.3 seconds |
 | F1-Score Range  | 0.0 - 0.8    |
 
-## 🔬 Research Applications
-
-### Immediate Applications
-
-- **Neural motif characterization** in optogenetic experiments
-- **Stimulation-response quantification** for closed-loop systems
-- **Architecture optimization** for neural data analysis
-
-### Future Directions
-
-- Multi-day longitudinal studies
-- Cross-mouse validation experiments
-- Real-time motif detection systems
-- Behavioral correlation analysis
-- Pharmacological intervention studies
-
-## 📝 Citation
-
-If you use this code or methodology in your research, please cite:
-
-```bibtex
-@software{neural_nmf_optogenetic_2024,
-  title={Neural Non-negative Matrix Factorization for Optogenetic Data Analysis},
-  author={[Your Name]},
-  year={2024},
-  url={https://github.com/[your-username]/[repo-name]}
-}
-```
-
-## 📧 Contact
-
-For questions about the methodology, implementation, or research collaboration:
-
-- **Research Inquiries**: [your.email@institution.edu]
-- **Technical Support**: [Create an issue in this repository]
-
-## 🏛️ Institution
-
-**Research conducted at**: [Your Institution]  
-**Department**: [Your Department]  
-**Lab**: [Your Lab Name]
-
-## 📜 License
-
-This research code is provided for academic and research purposes. Please see LICENSE file for detailed terms.
-
----
 
 **Keywords**: Neural NMF, Optogenetics, Neuroscience, Motif Analysis, CLa, Mouse Brain, Machine Learning, Signal Processing
